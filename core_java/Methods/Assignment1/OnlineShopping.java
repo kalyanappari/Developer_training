@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class OnlineShopping
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the value of cart value: ");
+		
+		double cartValue = sc.nextDouble();
+		
+		System.out.print("Is permium user(true/false): ");
+		
+		boolean isPremiumUser = sc.nextBoolean();
+		
+		String mes = discountCal(cartValue,isPremiumUser);
+		
+		System.out.println(mes);
+	}
+	public static String discountCal(double cv,boolean isPre){
+		
+		double min = 5000;
+		
+		if(cv > 0 && (isPre || cv > min)){
+			
+			double disPrice = cv - (0.1 * cv);
+			
+			return "You got a discount of 10%.\nTotal pay is: " + disPrice;
+		}
+		else{
+			
+			return "Your card value is not eligible for discount.\nTotal pay is: " + cv;
+		}
+		
+	}
+}

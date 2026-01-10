@@ -1,0 +1,71 @@
+import java.util.Scanner;
+class SwitchBankTransaction 
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("---Switching Bank Transaction---");
+		
+		long accountNo = 123456789;
+		double minb = 1000;
+		double balance = minb;
+		
+		while(true)
+		{
+			
+			System.out.println("Choose the below options!\n1. Withdraw\n2. Deposit\n3. Display\n4. Exit");
+			System.out.print("Enter your choice: ");
+			int choice = sc.nextInt();
+			switch (choice)
+			{
+				default:
+					System.out.println("Enter the correct choice!");
+				    break;
+				case 1:
+					System.out.println("Enter the amount for withdraw: ");
+				    double amount = sc.nextDouble();
+					if(withDraw(amount,balance,minb))
+					{
+						balance -= amount;
+						System.out.println("Withdraw Successfull!");
+					}
+					else{
+						System.out.println("Withdraw Failed!");
+					}
+					break;
+				case 2:
+					System.out.println("Enter your account number for deposit: ");
+				    long accNo = sc.nextLong();
+					System.out.println("Enter the amount for deposit: ");
+					double amt = sc.nextDouble();
+					if(deposit(accNo,accountNo,amt)){
+						System.out.println("Deposit Successfull!");
+						balance += amt;
+					}
+					else{
+						System.out.println("Deposit Failed!"); 
+					}
+					break;
+				case 3:
+					System.out.println("Account Details are: ");
+				    System.out.println("Account no: " + accountNo);
+					System.out.println("Current Balance: " + balance);
+					break;
+				case 4:
+					return;
+			}
+		}
+	}
+	public static boolean withDraw(double amount,double bal,double minb){
+		
+		return amount > 0 && (bal - amount > minb);
+		
+	}
+	public static boolean deposit(long accNo1,long accNo2,double amount){
+		
+		return accNo1 == accNo2 && amount > 0;
+		
+	}
+}

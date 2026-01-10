@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class ExamResultAnalyzer
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the Marks of three subjects: ");
+		
+		System.out.print("Subject1: ");
+		
+		double m1 = sc.nextDouble();
+		
+		System.out.print("Subject2: ");
+		
+		double m2 = sc.nextDouble();
+		
+		System.out.print("Subject3: ");
+		
+		double m3 = sc.nextDouble();
+		
+		char grade = gradeAnalyzer(m1,m2,m3);
+		
+		if(grade == 'F'){
+			
+			System.out.println("Subjects are not cleared!\nNot eligible for placements training");
+		}
+		else if(grade == 'E'){
+			System.out.println("Subjects are cleared!\nNot met the 60% criteria!\nNot eligible for placements training");
+		}
+		else{
+			System.out.println("Subjects are cleared!\nMet with the 60% criteria!\nEligible for placements training");
+		}
+	}
+	public static char gradeAnalyzer(double m1,double m2,double m3){
+		
+		double avgMarks = (m1 + m2 + m3) / 3;
+		
+		if(avgMarks > 90 && avgMarks <= 100){
+			
+			return 'O';
+		}
+		else if(avgMarks > 80 && avgMarks <= 90){
+			return 'A';
+		}
+		else if (avgMarks > 70 && avgMarks <= 80){
+			return 'B';
+		}
+		else if(avgMarks > 60 && avgMarks <= 70)
+		{
+			return 'C';
+		}
+		else if (avgMarks > 50 && avgMarks <= 60)
+		{
+			return 'D';
+		}
+		else if (avgMarks > 40 && avgMarks <= 50)
+		{
+			return 'E';
+		}
+		else{
+			return 'F';
+		}
+	}
+}

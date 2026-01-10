@@ -1,0 +1,17 @@
+class PriceDropNotification 
+{
+	public static void main(String[] args) 
+	{
+		
+		double actPrice = 100.00;
+		
+		double droppedPrice = 50.00;
+		
+		String res = (droppedPrice < actPrice) ? "Price Dropped!!" : "Constant price or may increased!!";
+		
+		System.out.println(res);
+		
+	}
+}
+
+// Here Less Than relational operator is used to check whether the price dropped while comparing with the last viewed price.
