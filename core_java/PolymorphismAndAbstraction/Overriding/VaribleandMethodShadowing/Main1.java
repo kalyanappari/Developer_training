@@ -1,5 +1,3 @@
-package core_java.PolymorphismAndAbstraction.Overriding.VaribleandMethodShadowing;
-
 public class Main1 {
 
     public static void main(String[] args){

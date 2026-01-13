@@ -1,5 +1,3 @@
-package core_java.PolymorphismAndAbstraction.Overriding.VaribleandMethodShadowing;
-
 class A2 extends A1{
 
     int x = 100;
