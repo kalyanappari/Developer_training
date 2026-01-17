@@ -51,6 +51,7 @@ public class Main1 {
 
         //Implicit conversion through autoBoxing + widening.
 
+        int val = 20;
         Long obj3 = val;
         System.out.println(obj3);
 

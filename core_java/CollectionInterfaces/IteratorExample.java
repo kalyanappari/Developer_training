@@ -32,5 +32,6 @@ public class IteratorExample {
         }
 
         System.out.println(obj);
+        
     }
 }
