@@ -1,4 +1,3 @@
-
 @FunctionalInterface
 interface Functional{
 
