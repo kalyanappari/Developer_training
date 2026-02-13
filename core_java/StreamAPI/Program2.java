@@ -18,5 +18,10 @@ public class Program2 {
         map.entrySet().stream()
                       .forEach(e -> System.out.println("Deptno: " + e.getKey() + "List: " + e.getValue()));
 
+        TreeMap<String,String> mp = list.stream()
+                                    .collect(Collectors.groupingBy(Employees::getID,TreeMap::new,Collectors.mapping(Employees::getName,Collectors.joining(", ","[","]"))));
+
+        mp.entrySet().stream()
+                     .forEach(obj -> System.out.println(obj.getKey() + " " + obj.getValue()));
     }
 }
