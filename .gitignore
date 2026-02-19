@@ -1,0 +1,20 @@
+*.class
+*.bak
+*.xlsx
+# Raw training / scratch code
+rawtraining/
+src/com/rawtraining/
+
+# Eclipse build output
+bin/
+
+# Python cache
+__pycache__/
+*.pyc
+.metadata/
+.settings/
+.project
+.classpath
+bin/
+target/
+*.log
