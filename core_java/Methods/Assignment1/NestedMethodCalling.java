@@ -1,0 +1,15 @@
+class NestedMethodCalling 
+{
+	public static void main(String[] args) 
+	{
+		m1(m3(100),20);
+	}
+	public static void m1(String x,int a){
+		System.out.println(x);
+		System.out.println("m2 -> " + a);
+		return;
+	}
+	public static String m3(int b){
+		return "m3->" + b;
+	}
+}

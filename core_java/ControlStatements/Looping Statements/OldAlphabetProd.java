@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class  OldAlphabetProd
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Product of old alphabets is: ");
+		
+		long result = 1;
+		
+		for(int i='A';i<='Z';i++){
+			
+			if(i%2 != 0){
+				result *= i;
+			}
+		}
+		System.out.print(result);
+	}
+}

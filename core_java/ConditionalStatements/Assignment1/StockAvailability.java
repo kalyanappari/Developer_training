@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class StockAvailability 
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the product name:");
+		
+		String product = sc.next();
+		
+		sc.nextLine();
+		
+		System.out.print("Enter the product available stock: ");
+		
+		int available = sc.nextInt();
+		
+		String res = (available > 0) ? "Product added to cart" : "Product is not available";
+		
+		System.out.println(res);
+		
+	}
+}
+
+/* Here Greater Than ( > ) relational Operator is used to validate the stock as we check whether the availability 
+   of the product is more than zero or not.
+   
+   Validating the stocks in with more than zero is safer then checking the non zero stocks because it prevents unexpected cases like negative stocks values.*/
+   
+   

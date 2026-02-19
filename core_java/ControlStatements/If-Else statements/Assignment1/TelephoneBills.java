@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class TelephoneBills 
+{
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the no of calls: ");
+		
+		int calls = sc.nextInt();
+		
+		double bPrice = 200.00;
+		
+		double total = 0;
+		
+		if(calls >= 0 && calls <= 100){
+			total = bPrice;
+		}
+		else if(calls > 100 && calls <= 150)
+		{
+			total = bPrice + ((calls - 100) * 0.60);
+		}
+		else if(calls > 150 && calls <= 200)
+		{
+			total = bPrice + (((calls - 100) - (calls - 150)) * 0.60) + ((calls - 150) * 0.50);
+		}
+		else {
+		 	total = bPrice + (((calls - 100) - (calls - 150) - (calls - 200)) * 0.60) + (((calls - 150) - (calls - 200)) * 0.50) * (calls - 200) * 0.40;
+		}
+	
+		System.out.println("Total Price: " + total);
+		
+	}
+}

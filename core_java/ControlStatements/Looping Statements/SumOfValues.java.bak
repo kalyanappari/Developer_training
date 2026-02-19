@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class  SumOfValues
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		//Summation of the numbers between given range which are divisible by 5.
+		
+		System.out.print("Enter the num1: ");
+		int m = sc.nextInt();
+		
+		System.out.print("Enter the num2: ");
+		int n = sc.nextInt();
+		
+		int sum = 0;
+		
+		for(int i=m;i<n;i++){
+			
+			if(i % 5 == 0){
+				sum++;
+			}
+		}
+		System.out.println("The sum of values which are divisible by 5 is: " + sum);
+	}
+}

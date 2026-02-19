@@ -1,0 +1,22 @@
+import java.util.Scanner;
+class TableWithoutMul
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter the num of table you want: ");
+		int m = sc.nextInt();
+		
+		System.out.print("Enter the num of steps you want: ");
+		int n = sc.nextInt();
+		
+		int val = m;
+		
+		for(int i=1;i<=n;i++){			
+			System.out.println(m + " * " + i + " = " + val);
+			val += m;
+		}
+		
+	}
+}

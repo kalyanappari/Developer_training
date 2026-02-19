@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.class
 *.bak
 *.xlsx
@@ -18,3 +19,7 @@ __pycache__/
 bin/
 target/
 *.log
+=======
+.bak
+/.metadata/
+>>>>>>> 4e67ac55e0563e7523213c3c1b1c1e4fa688e81c
