@@ -1,0 +1,12 @@
+package com.capg.bean;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Accounts")
+public class AccountBean implements Serializable{
+	
+}

@@ -1,0 +1,30 @@
+package com.corejava.layers;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class ProductDao {
+	
+	ConnectionDB cdb = new ConnectionDB();
+	
+	public ResultSet displayProducts() throws Exception {
+		
+		Connection conn = cdb.provideConnection();
+		
+		Statement st = conn.createStatement();
+		
+		return st.executeQuery("select * from product");
+		
+		conn.close();
+	}
+	
+	public int addProduct() {
+		
+	}
+	
+	public int deleteProduct() {
+		
+		
+	}
+}

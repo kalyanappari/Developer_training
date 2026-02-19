@@ -1,0 +1,35 @@
+package com.capg.assessment.dao;
+
+import java.time.LocalDate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.capg.assessment.bean.AccountBean;
+import com.capg.assessment.bean.TransactionBean;
+
+public class BankAccountDao {
+	
+	
+	Configuration cfg = new Configuration().configure();
+	SessionFactory factory = cfg.buildSessionFactory();
+	
+	Session = null;
+	
+	public void addToDB(AccountBean ab) {
+		
+		session = factory.openSession();
+		
+		Transaction t = session.beginTransaction();
+		
+		session.save(ab);
+		
+		TransactionBean tb = new TransactionBean();
+		
+		tb.setAccNo(ab.getAccNo());
+		tb.setTrans("Create account with initial Balance + " + ab.getBalance());
+		tb.setDate(LocalDate.now());
+	}
+}

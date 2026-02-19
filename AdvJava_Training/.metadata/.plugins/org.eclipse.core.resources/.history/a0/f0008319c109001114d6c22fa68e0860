@@ -1,0 +1,49 @@
+package com.capg.assessment.service;
+
+import com.capg.assessment.bean.AccountBean;
+import com.capg.assessment.dao.BankAccountDao;
+
+public class BankAccountService {
+	
+	BankAccountDao obj = new BankAccountDao();
+
+	public void addAccount(long accno, String hname, long mnum, double bal) {
+		
+		AccountBean ab = new AccountBean();
+		
+		ab.setAccNo(accno);
+		ab.setHolderName(hname);
+		ab.setMobile(mnum);
+		ab.setBalance(bal);
+		
+		obj.addToDB(ab);
+	}
+	
+	public double getBalance(long accno) {
+		return obj.getBalance(accno);
+	}
+
+	public void depositAmount(long ano, double amount) {
+		obj.depositAmount(ano,amount);
+	}
+
+	public void withdrawAmount(long a1no, double wamount) {
+		
+		if(obj.getBalance(a1no) - wamount < 0) {
+			
+			System.out.println("Limited Balance. Can't Withdraw entered amount!");
+		}
+		else {
+			obj.withdramAmount(a1no,wamount);
+		}
+	}
+
+	public void transferAmount(long a2no, long a3no, double a1) {
+		
+		if(obj.getBalance(a2no) - a1 < 0) {
+			
+			System.out.println("Limited Balance. Can't able to transfer amount!");
+		}
+	}
+
+}

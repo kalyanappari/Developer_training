@@ -1,0 +1,20 @@
+package com.capg.assessment.bean;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "AccountTransactions")
+public class TransactionBean implements Serializable{
+	
+	@Column(name = "AccountNumber")
+	private long accNo;
+	
+	@Column(name = "Transactions")
+	private String trans;
+	
+}
