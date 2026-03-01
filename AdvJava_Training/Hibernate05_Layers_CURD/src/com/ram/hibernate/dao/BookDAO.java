@@ -16,12 +16,9 @@ public class BookDAO {
                             .buildSessionFactory();
 */
     
-	
-	 
 SessionFactory sf = new AnnotationConfiguration().configure
         ("hibernate.cfg.xml").buildSessionFactory();
 
-    /* CREATE */
     public void addBook(BookBean book) {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
@@ -30,7 +27,6 @@ SessionFactory sf = new AnnotationConfiguration().configure
         session.close();
     }
 
-    /* READ */
     public BookBean getBook(int bookId) {
         Session session = sf.openSession();
         BookBean book = (BookBean) session.get(BookBean.class, bookId);
@@ -38,7 +34,6 @@ SessionFactory sf = new AnnotationConfiguration().configure
         return book;
     }
 
-    /* UPDATE */
     public void updateBook(BookBean book) {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
@@ -47,7 +42,7 @@ SessionFactory sf = new AnnotationConfiguration().configure
         session.close();
     }
 
-    /* DELETE */
+
     public void deleteBook(int bookId) {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
