@@ -2,10 +2,14 @@ package com.capg.springboot.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Booking {
 	
 	@Id
@@ -21,6 +25,7 @@ public class Booking {
 	
 	@ManyToOne
 	@JoinColumn(name = "roomid")
+	@JsonBackReference
 	private Room roomid;
 
 	public int getBookingId() {

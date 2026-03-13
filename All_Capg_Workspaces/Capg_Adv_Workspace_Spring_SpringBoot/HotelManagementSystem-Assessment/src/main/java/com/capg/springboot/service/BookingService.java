@@ -3,7 +3,6 @@ package com.capg.springboot.service;
 import java.util.List;
 
 import com.capg.springboot.entity.Booking;
-
 public interface BookingService {
 	
 	public Booking createBooking(Booking booking);

@@ -8,6 +8,9 @@ public class HotelManagementSystemAssessmentApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HotelManagementSystemAssessmentApplication.class, args);
+		
+		System.out.println("Server started!!!!");
+		
 	}
 
 }

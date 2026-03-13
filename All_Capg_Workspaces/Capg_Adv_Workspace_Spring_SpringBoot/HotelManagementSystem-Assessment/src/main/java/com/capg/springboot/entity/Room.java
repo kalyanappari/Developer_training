@@ -1,12 +1,17 @@
 package com.capg.springboot.entity;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
+@JsonIgnoreProperties({"Bookings"})
 public class Room {
 	
 	@Id
@@ -17,7 +22,8 @@ public class Room {
 	private String status;
 	
 	@OneToMany(mappedBy = "roomid")
-	private List<Booking> Bookings;
+	@JsonManagedReference
+	private List<Booking> Bookings = new ArrayList<>();
 
 	public int getRoomId() {
 		return roomId;
